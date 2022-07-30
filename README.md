@@ -4,7 +4,7 @@ Set of programming assignments that are designed to test knowledge of stack data
 
 ### Default interface for Stack data structure
 
-The following snippet contains the default interface that could be used for implements Stack data structure. Of course the interface could be expanded with additional method if needed.
+The following snippet contains the default interface that could be used for implementation of Stack data structure. Of course the interface could be expanded with additional methods if needed.
 
 ```python
 class Stack:

@@ -6,7 +6,7 @@ Set of programming assignments that are designed to test knowledge of stack data
 
 Your first programming assignment is to implement the provided default interface for Stack.
 
-## Problem 2: Check whether given parentheses expression is valid
+## Problem 2: Check whether a given parentheses expression is valid
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
 

@@ -65,7 +65,7 @@ Tests will check your implementation in different scenarios, for simplicity you 
 
 Please use a template for the implementation (`tasks/stack.py`).
 
-## Problem 2: Check whether given parentheses expression is valid
+## Problem 2: Check whether a given parentheses expression is valid
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
 

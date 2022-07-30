@@ -1,4 +1,4 @@
-# stack--task--python
+# Stack (python)
 
 Set of programming assignments that are designed to test knowledge of stack data structure.
 

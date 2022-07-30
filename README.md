@@ -97,7 +97,7 @@ Please use a template for the implementation (`tasks/parentheses.py`).
 
 ## Problem 3: Stack with minimum operation
 
-Let's extend the default interface of Stack data structure and add support of `get_minimum` method:
+Let's extend the default interface of Stack data structure and add a support of `get_minimum` method:
 
 ```python
 class StackWithMinimum(Stack):  # Here we inherit from the default interface, make sure it is implemented already.

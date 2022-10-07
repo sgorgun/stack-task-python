@@ -113,7 +113,7 @@ Expected output: True.
 
 **Example 3:**
 
-Input: `s='([})'`
+`s`='([})'
 
 Expected output: False.
 

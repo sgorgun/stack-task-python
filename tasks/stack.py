@@ -51,15 +51,15 @@ class Stack:
 
 
 class StackWithMinimum(Stack):
-    """Extended Stack class that supports minimum operation.
+    """Extended Stack class that supports `get_minimum` operation.
 
-    Assume that elements of stack are numerical (so that minimum operation is eligible).
+    Assume that elements in Stack are numerical (so that `get_minimum` operation is eligible).
     """
 
     def get_minimum(self) -> Optional[int]:
         """Returns the minimum element in the stack.
 
-        NOTE: if the stack is empty - returns None.
+        NOTE: if the stack is empty - return None.
         NOTE: O(1) complexity is expected for this operation.
         """
         pass

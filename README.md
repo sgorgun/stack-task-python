@@ -1,8 +1,24 @@
-# Stack (python)
+# Stack
 
-Set of programming assignments that are designed to test knowledge of stack data structure.
+## Purpose
 
-### Default interface for Stack data structure
+The coding exercises are designed to test knowledge of the following concepts:
+
+* The default Stack interface
+* Adjusting Stack data structure to support more complex operations
+* Usage of Stack data structure in practice
+
+## Overview
+
+The coding exercises cover the following practical problems:
+* Implementing the default Stack interface
+* Validation of a given parentheses expression
+* Adjusting Stack to support `get_minimum` operation
+* Reverse Polish notation (RPN) parsing
+
+## Coding exercises
+
+### Exercise 1: Implement the default Stack interface
 
 The following snippet contains the default interface that could be used for implementation of Stack data structure. Of course the interface could be expanded with additional methods if needed.
 
@@ -55,17 +71,11 @@ class Stack:
         pass
 ```
 
-You may find the interface above here: `tasks/stack.py`.
+Your task is to implement the provided default interface for Stack above.
 
-## Problem 1: Implement stack using the default interface
+Please use a template for the implementation (`tasks/stack.py:Stack`).
 
-Your first programming assignment is to implement the provided default interface for Stack above.
-Tests will check your implementation in different scenarios, for simplicity you may assume that only numeric elements will be used for testing.
-
-
-Please use a template for the implementation (`tasks/stack.py`).
-
-## Problem 2: Check whether a given parentheses expression is valid
+## Exercise 2: Check whether a given parentheses expression is valid
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
 
@@ -74,36 +84,51 @@ An input string is valid if:
 1. Open brackets must be closed by the same type of brackets.
 2. Open brackets must be closed in the correct order.
 
+
+Your task is implement the following function that solves the problem above:
+
+```python
+def is_valid_parentheses(expression: str) -> bool:
+    """Returns True if a given string is valid parentheses expression.
+
+    Args:
+        expression: str, input string for validation.
+    Returns:
+        bool, whether a given string is valid parentheses expression.
+    """
+    pass
+```
+
 **Example 1:**
 
-Input: `s='()'`
+`s`='()'
 
-Expected result: True.
+Expected output: True.
 
 **Example 2:**
 
-Input: `s='()[]{}'`
+`s`='()[]{}'
 
-Expected result: True.
+Expected output: True.
 
 **Example 3:**
 
 Input: `s='([})'`
 
-Expected result: True.
+Expected output: False.
 
 
-Please use a template for the implementation (`tasks/parentheses.py`).
+Please use a template for the implementation (`tasks/parentheses.py:is_valid_parentheses`).
 
-## Problem 3: Stack with minimum operation
+## Exercise 3: Stack with `get_minimum` operation
 
-Let's extend the default interface of Stack data structure and add a support of `get_minimum` method:
+Your task is to extend the default interface for Stack data structure and add a support of `get_minimum` method:
 
 ```python
 class StackWithMinimum(Stack):  # Here we inherit from the default interface, make sure it is implemented already.
-    """Extended Stack class that supports minimum operation.
+    """Extended Stack class that supports `get_minimum` operation.
 
-    Assume that elements of stack are numerical (so that minimum operation is eligible).
+    Assume that elements in Stack are numerical (so that `get_minimum` operation is eligible).
     """
 
     def get_minimum(self) -> Optional[int]:
@@ -116,7 +141,6 @@ class StackWithMinimum(Stack):  # Here we inherit from the default interface, ma
 ```
 
 **Example:**
-
 
 ```python
 stack = StackWithMinimum()
@@ -137,10 +161,10 @@ stack.pop()  # 3, 2, 4
 assert stack.get_minimum() == 2
 ```
 
-Please use a template for the implementation (`tasks/stack.py`).
+Please use a template for the implementation (`tasks/stack.py:StackWithMinimum`).
 
 
-## Problem 4: Reverse Polish notation parsing
+## Exercise 4: Reverse Polish notation parsing
 
 Your task is to evaluate the value of an arithmetic expression in [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
@@ -150,21 +174,29 @@ Note that division between two integers should truncate toward zero.
 
 It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
 
+Your are provided with the following template for implementation:
+
+```python
+def evaluate_rpn_tokens(rpn_tokens: List[str]) -> int:
+    """Returns the evaluation result of a given list of RPN tokens."""
+    pass
+```
+
 
 **Example 1:**
 
-Input: `tokens = ["3","2","+","10","*"]`
+`tokens` = ["3","2","+","10","*"]
 
-Expected result: 50.
+Expected output: 50.
 
 Explanation: `(3 + 2) * 10 = 50`
 
 **Example 2:**
 
-Input: `tokens = ["10", "4", "-", "2", "*", "4", "/"]`
+`tokens` = ["10", "4", "-", "2", "*", "4", "/"]
 
-Expected result: 2.
+Expected output: 2.
 
 Explanation: `((10 - 4) * 2) / 5 = 2`
 
-Please use a template for the implementation (`tasks/rpn.py`).
+Please use a template for the implementation (`tasks/rpn.py:evaluate_rpn_tokens`).

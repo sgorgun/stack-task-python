@@ -2,25 +2,25 @@
 
 ## Purpose
 
-The coding exercises are designed to test knowledge of the following concepts:
+The coding exercises are designed to test your knowledge of the following concepts:
 
-* The default Stack interface
-* Adjusting Stack data structure to support more complex operations
-* Usage of Stack data structure in practice
+* The default stack interface
+* Adjusting the stack data structure to support more complex operations
+* Using the stack data structure in practice
 
 ## Overview
 
 The coding exercises cover the following practical problems:
-* Implementing the default Stack interface
-* Validation of a given parentheses expression
-* Adjusting Stack to support `get_minimum` operation
+* Implementing the default stack interface
+* Validating expressions in parentheses
+* Adjusting a stack to support the `get_minimum` operation
 * Reverse Polish notation (RPN) parsing
 
 ## Coding exercises
 
-### Exercise 1: Implement the default Stack interface
+### Exercise 1: Implement the default stack interface
 
-The following snippet contains the default interface that could be used for implementation of Stack data structure. Of course the interface could be expanded with additional methods if needed.
+The following snippet contains the default interface for implementing the stack data structure. Of course, the interface can be expanded with additional methods if necessary.
 
 ```python
 class Stack:
@@ -71,13 +71,15 @@ class Stack:
         pass
 ```
 
-Your task is to implement the provided default interface for Stack above.
+Your task is to implement the provided default interface for the stack above.
 
-Please use a template for the implementation (`tasks/stack.py:Stack`).
+<br/>
+
+Please use the template `tasks/stack.py:Stack` for the implementation.
 
 ## Exercise 2: Check whether a given parentheses expression is valid
 
-Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
+Given a string `s` containing only the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
 
 An input string is valid if:
 
@@ -85,7 +87,7 @@ An input string is valid if:
 2. Open brackets must be closed in the correct order.
 
 
-Your task is implement the following function that solves the problem above:
+Your task is to implement the following function to solve the problem above:
 
 ```python
 def is_valid_parentheses(expression: str) -> bool:
@@ -117,12 +119,13 @@ Expected output: True.
 
 Expected output: False.
 
+<br/>
 
-Please use a template for the implementation (`tasks/parentheses.py:is_valid_parentheses`).
+Please use the template `tasks/parentheses.py:is_valid_parentheses` for the implementation.
 
-## Exercise 3: Stack with `get_minimum` operation
+## Exercise 3: A stack with the `get_minimum` operation
 
-Your task is to extend the default interface for Stack data structure and add a support of `get_minimum` method:
+Your task is to extend the default interface for a stack data structure and add the `get_minimum` method:
 
 ```python
 class StackWithMinimum(Stack):  # Here we inherit from the default interface, make sure it is implemented already.
@@ -161,20 +164,22 @@ stack.pop()  # 3, 2, 4
 assert stack.get_minimum() == 2
 ```
 
-Please use a template for the implementation (`tasks/stack.py:StackWithMinimum`).
+<br/>
+
+Please use the template `tasks/stack.py:StackWithMinimum` for the implementation.
 
 
-## Exercise 4: Reverse Polish notation parsing
+## Exercise 4: RPN parsing
 
-Your task is to evaluate the value of an arithmetic expression in [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Your task is to evaluate the value of an arithmetic expression in [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
 Valid operators are `+`, `-`, `*`, and `/`. Each operand may be an integer or another expression.
 
 Note that division between two integers should truncate toward zero.
 
-It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
+It is guaranteed that the given RPN expression is always valid. This means the expression will always evaluate to a result and there will never be any division by zero operation.
 
-Your are provided with the following template for implementation:
+You are provided with the following template for the implementation:
 
 ```python
 def evaluate_rpn_tokens(rpn_tokens: List[str]) -> int:
@@ -199,4 +204,6 @@ Expected output: 2.
 
 Explanation: `((10 - 4) * 2) / 5 = 2`
 
-Please use a template for the implementation (`tasks/rpn.py:evaluate_rpn_tokens`).
+<br/>
+
+Please use the template `tasks/rpn.py:evaluate_rpn_tokens` for the implementation.

@@ -10,6 +10,8 @@ def evaluate_rpn_tokens(rpn_tokens: List[str]) -> int:
         if token.isdigit():
             operand_stack.push(int(token))
         else:
+            if operand_stack.size() < 2:
+                raise ValueError("Invalid RPN expression: not enough operands for operation")
             operand_two = operand_stack.pop()
             operand_one = operand_stack.pop()
             if token == '+':
@@ -20,4 +22,6 @@ def evaluate_rpn_tokens(rpn_tokens: List[str]) -> int:
                 operand_stack.push(operand_one * operand_two)
             elif token == '/':
                 operand_stack.push(int(operand_one / operand_two))
+    if operand_stack.size() != 1:
+        raise ValueError("Invalid RPN expression: too many operands")
     return operand_stack.pop()

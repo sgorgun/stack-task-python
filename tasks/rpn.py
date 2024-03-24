@@ -7,7 +7,7 @@ def evaluate_rpn_tokens(rpn_tokens: List[str]) -> int:
     """Returns the evaluation result of a given list of RPN tokens."""
     operand_stack = Stack()
     for token in rpn_tokens:
-        if token.isdigit():
+        if token.lstrip('-').isdigit():  # This will handle negative numbers
             operand_stack.push(int(token))
         else:
             if operand_stack.size() < 2:

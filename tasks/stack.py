@@ -1,41 +1,50 @@
 """Templates for programming assignments: stack API."""
 from typing import Any, Optional
 
+class LinkedListNode:
+    """Dataclass that represents linked list elements."""
+
+    def __init__(
+        self,
+        value: int = 0,
+        next_element: Optional['LinkedListNode'] = None
+    ):
+        self.value = value
+        self.next_element = next_element
 
 class Stack:
     """Default interface for Stack data structure."""
 
     def __init__(self):
-        self._stack = []
-        self.min_stack = []        
+        self.head = None
+        self.counter = 0
+        self.min_stack = None
 
     def empty(self) -> bool:
         """Returns True if the stack is empty.
 
         NOTE: O(1) complexity is expected for this operation.
         """
-        return len(self._stack) == 0
+        return self.head is None
 
     def size(self) -> int:
         """Returns the number of elements within the stack.
 
         NOTE: O(1) complexity is expected for this operation.
         """
-        return len(self._stack)
+        return self.counter
 
     def push(self, element: Any):
         """Adds a given element to the top of the stack.
 
         NOTE: O(1) complexity is expected for this operation.
         """
-        self._stack.append(element)
-        if len(self.min_stack) == 0:
-            self.min_stack.append(element)
-        else:
-            if element < self.min_stack[-1]:
-                self.min_stack.append(element)
-            else:
-                self.min_stack.append(self.min_stack[-1])
+        new_node = LinkedListNode(element, self.head)
+        self.head = new_node
+        self.counter += 1
+        
+        if self.min_stack is None or element <= self.min_stack.value:
+            self.min_stack = LinkedListNode(element, self.min_stack)
 
     def pop(self) -> Any:
         """Returns the top element and removes it.
@@ -45,10 +54,16 @@ class Stack:
         Raises:
             ValueError: If the stack is empty.
         """
-        if len(self._stack) == 0:
-            raise ValueError
-        self.min_stack.pop()
-        return self._stack.pop()
+        if self.empty():
+            raise ValueError("Stack is empty")
+        result = self.head.value
+        self.head = self.head.next_element
+        self.counter -= 1
+        
+        if result == self.min_stack.value:
+            self.min_stack = self.min_stack.next_element
+        
+        return result
 
     def peak(self) -> Any:
         """Returns the top element.
@@ -58,10 +73,9 @@ class Stack:
         Raises:
             ValueError: If the stack is empty.
         """
-        if len(self._stack) == 0:
-            raise ValueError
-        return self._stack[-1]
-
+        if self.empty():
+            raise ValueError("Stack is empty")
+        return self.head.value
 
 class StackWithMinimum(Stack):
     """Extended Stack class that supports `get_minimum` operation.
@@ -75,6 +89,6 @@ class StackWithMinimum(Stack):
         NOTE: if the stack is empty - return None.
         NOTE: O(1) complexity is expected for this operation.
         """
-        if len(self.min_stack) == 0:
+        if self.empty():
             return None
-        return self.min_stack[-1]
+        return self.min_stack.value
